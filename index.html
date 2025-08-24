@@ -1,1 +1,67 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Random Japanese Grammar Generator" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Random Japanese Grammar Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 1rem;
+            font-family: sans-serif;
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .grammar-point {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Japanese Grammar Generator</h1>
+    <p>Click the button below to get a random grammar point.</p>
+
+    <button id="generateBtn">Generate Grammar</button>
+    <div id="grammarContainer" class="grammar-point"></div>
+
+    <script>
+        // 1. Define an array of grammar points.
+        const grammarPoints = [
+            "～てみる (to try doing something)",
+            "～てしまう (to do something completely)",
+            "～かもしれない (might, maybe)",
+            "～ば conditional form",
+            "～たら conditional form",
+            "～なくてはいけない (must do, have to)",
+            "～ようになる (to reach a point of doing something)",
+            "～ほど (to the extent that...)"
+        ];
+
+        // 2. Get references to the button and the container.
+        const generateBtn = document.getElementById("generateBtn");
+        const grammarContainer = document.getElementById("grammarContainer");
+
+        // 3. Define the function to display a random grammar point.
+        function showRandomGrammar() {
+            const randomIndex = Math.floor(Math.random() * grammarPoints.length);
+            grammarContainer.textContent = grammarPoints[randomIndex];
+        }
+
+        // 4. Attach a click listener to the button.
+        generateBtn.addEventListener("click", showRandomGrammar);
+    </script>
+</body>
+</html>
